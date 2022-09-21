@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include <stdio.h>
+#include <rogue.h>
 
 int main(void) {
   initscr();
