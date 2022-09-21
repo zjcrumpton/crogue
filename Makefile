@@ -1,5 +1,14 @@
-build:
-	clang main.c -lncurses
+CC = gcc
+CFLAGS = -lncurses
+SOURCES = ./src/*.c
+
+all: rogue run clean
+
+rogue: 
+	$(CC) $(SOURCES) $(CFLAGS) -o rogue
 
 run:
-	./a.out
+	./rogue
+
+clean:
+	rm rogue
