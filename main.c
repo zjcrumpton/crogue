@@ -3,8 +3,14 @@
 
 int main(void) {
   initscr();
+  noecho();
+  curs_set(0);
+
+  while (getch() != 'q') {
+    mvaddch(10, 20, '@');
+  }
+
   endwin();
-  printf("Hello World!\n");
 
   return 0;
 }
