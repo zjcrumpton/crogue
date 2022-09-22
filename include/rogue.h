@@ -28,6 +28,7 @@ void freeMap();
 void printMap();
 void printEntity(Entity* ent);
 void drawGame();
+void printTile(int y, int x, Tile* tile);
 
 // player.c functions
 Entity* createPlayer(Position start_pos);
