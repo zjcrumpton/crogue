@@ -33,6 +33,7 @@ void printTile(int y, int x, Tile* tile);
 // player.c functions
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
+void movePlayer(Position newPos);
 
 // externs
 extern Entity* player;
