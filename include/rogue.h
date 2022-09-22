@@ -14,13 +14,31 @@ typedef struct {
   char ch;
 } Entity;
 
+// Map Data Structures
+typedef struct {
+  bool walkable;
+  char ch;
+} Tile;
+
+// map funcs
+Tile** createMapTiles();
+void freeMap();
+
+// draw funcs
+void printMap();
+void printTile(int y, int x, Tile* tile);
+void printEntity(Entity* ent);
+void drawGame();
+
 // player.c functions
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
-void printEntity(Entity* ent);
 
 // externs
 extern Entity* player;
+extern const int MAP_HEIGHT;
+extern const int MAP_WIDTH;
+extern Tile** map;
 
 // Game funcs
 void gameLoop();

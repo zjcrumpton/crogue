@@ -11,8 +11,7 @@ void gameLoop() {
     } 
 
     handleInput(ch);
-    clear();
-    printEntity(player);
+    drawGame();
   } 
 }
 
