@@ -26,7 +26,6 @@ void freeMap();
 
 // draw funcs
 void printMap();
-void printTile(int y, int x, Tile* tile);
 void printEntity(Entity* ent);
 void drawGame();
 
