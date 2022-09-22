@@ -32,3 +32,7 @@ void handleInput(int input) {
       break;
   }
 }
+
+void printEntity(Entity* ent) {
+  mvaddch(ent->pos.y, ent->pos.x, ent->ch);
+}

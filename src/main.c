@@ -13,7 +13,7 @@ int main(void) {
   curs_set(0);
 
   player = createPlayer(startPos);
-  mvaddch(player->pos.y, player->pos.x, player->ch);
+  printEntity(player);
 
   while (ch = getch()) {
     if (ch == 'q') {
@@ -22,7 +22,7 @@ int main(void) {
 
     handleInput(ch);
     clear();
-    mvaddch(player->pos.y, player->pos.x, player->ch);
+    printEntity(player);
   }
 
   endwin();

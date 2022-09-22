@@ -18,6 +18,8 @@ typedef struct {
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
 
+void printEntity(Entity* ent);
+
 // externs
 extern Entity* player;
 
