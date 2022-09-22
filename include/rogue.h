@@ -17,10 +17,17 @@ typedef struct {
 // player.c functions
 Entity* createPlayer(Position start_pos);
 void handleInput(int input);
-
 void printEntity(Entity* ent);
 
 // externs
 extern Entity* player;
+
+// Game funcs
+void gameLoop();
+void closeGame();
+
+// Window funcs
+void setupCurses();
+void closeWindow();
 
 #endif
