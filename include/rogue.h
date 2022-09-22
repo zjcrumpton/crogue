@@ -23,6 +23,7 @@ typedef struct {
 // map funcs
 Tile** createMapTiles();
 void freeMap();
+Position setupMap();
 
 // draw funcs
 void printMap();

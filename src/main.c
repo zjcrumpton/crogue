@@ -10,9 +10,9 @@ Tile** map;
 
 int main(void) {
   int ch;
-  Position startPos = { 10, 20 };
-  player = createPlayer(startPos);
   map = createMapTiles();
+  Position startPos = setupMap();
+  player = createPlayer(startPos);
 
   setupCurses();
   gameLoop();
