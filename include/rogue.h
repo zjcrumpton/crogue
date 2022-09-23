@@ -4,6 +4,10 @@
 #include <ncurses.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
+
+#define VISIBLE_COLOR 1
+#define SEEN_COLOR 2
 
 typedef struct {
   int y;
@@ -13,12 +17,17 @@ typedef struct {
 typedef struct {
   Position pos;
   char ch;
+  int color;
 } Entity;
 
 // Map Data Structures
 typedef struct {
   bool walkable;
   char ch;
+  int color;
+  bool transparent;
+  bool visible;
+  bool seen;
 } Tile;
 
 typedef struct {
@@ -28,10 +37,18 @@ typedef struct {
   Position center;
 } Room;
 
+// fov funcs
+void makeFOV(Entity* player);
+void clearFOV(Entity* player);
+int getDistance(Position origin, Position target);
+bool isInMap(int y, int x);
+
 // room funcs
 Room createRoom(int y, int x, int height, int width);
 void addRoomToMap(Room room);
 void connectRoomCenters(Position centerOne, Position centerTwo);
+bool lineOfSight(Position origin, Position target);
+int getSign(int a);
 
 // map funcs
 Tile** createMapTiles();
@@ -42,7 +59,7 @@ Position setupMap();
 void printMap();
 void printEntity(Entity* ent);
 void drawGame();
-void printTile(int y, int x, Tile* tile);
+void printTile(int y, int x, Tile* tile, int color);
 
 // player.c functions
 Entity* createPlayer(Position start_pos);

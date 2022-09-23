@@ -3,6 +3,7 @@
 void gameLoop() {
   int ch;
 
+  makeFOV(player);
   drawGame();
 
   while(ch = getch()) { 

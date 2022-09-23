@@ -18,6 +18,7 @@ void addRoomToMap(Room room) {
     for (int x = room.pos.x; x < room.pos.x + room.width; x++) {
       map[y][x].ch = '.';
       map[y][x].walkable = true;
+      map[y][x].transparent = true;
     }
   }
 }
@@ -42,5 +43,6 @@ void connectRoomCenters(Position centerOne, Position centerTwo) {
 
     map[temp.y][temp.x].ch = '.';
     map[temp.y][temp.x].walkable = true;
+    map[temp.y][temp.x].transparent = true;
    }
 }
