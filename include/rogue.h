@@ -31,6 +31,7 @@ typedef struct {
 // room funcs
 Room createRoom(int y, int x, int height, int width);
 void addRoomToMap(Room room);
+void connectRoomCenters(Position centerOne, Position centerTwo);
 
 // map funcs
 Tile** createMapTiles();

@@ -27,6 +27,10 @@ Position setupMap() {
     width = (rand() % 15) + 5;
     rooms[i] = createRoom(y, x, height, width);
     addRoomToMap(rooms[i]);
+
+    if (i > 0) {
+      connectRoomCenters(rooms[i - 1].center, rooms[i].center);
+    }
   }
 
   startPos.y = rooms[0].center.y;
