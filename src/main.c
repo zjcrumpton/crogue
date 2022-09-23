@@ -11,10 +11,11 @@ Tile** map;
 int main(void) {
   int ch;
   map = createMapTiles();
+  setupCurses();
+  srand(time(NULL));
   Position startPos = setupMap();
   player = createPlayer(startPos);
 
-  setupCurses();
   gameLoop();
   closeGame();
 

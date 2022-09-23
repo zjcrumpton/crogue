@@ -3,7 +3,7 @@
 void gameLoop() {
   int ch;
 
-  printEntity(player);
+  drawGame();
 
   while(ch = getch()) { 
     if (ch == 'q') { 

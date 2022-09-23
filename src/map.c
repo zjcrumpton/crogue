@@ -15,16 +15,26 @@ Tile** createMapTiles() {
 }
 
 Position setupMap() {
-  Position start_pos = { 10, 50 };
+  int y, x, height, width, nRooms;
+  nRooms =  (rand() % 11) + 5;
+  Room* rooms = calloc(nRooms, sizeof(Room));
+  Position startPos;
 
-  for (int y = 5; y < 15; y++) {
-    for (int x = 40; x < 60; x++) {
-      map[y][x].ch = '.';
-      map[y][x].walkable = true;
-    }
+  for (int i = 0; i < nRooms; i++) {
+    y = (rand() % (MAP_HEIGHT - 10)) + 1;
+    x = (rand() % (MAP_WIDTH - 20)) + 1;
+    height = (rand() % 7) + 3;
+    width = (rand() % 15) + 5;
+    rooms[i] = createRoom(y, x, height, width);
+    addRoomToMap(rooms[i]);
   }
 
-  return start_pos;
+  startPos.y = rooms[0].center.y;
+  startPos.x = rooms[0].center.x;
+
+  free(rooms);
+
+  return startPos;
 }
 
 void freeMap() {
